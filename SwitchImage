@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        int count = 0;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {            
+            count++;
+            if (count<=3)
+            {
+                SwitcherImage(count);
+            }
+            else
+            {
+                count = 3;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            count--;
+            if (count>=0)
+            {
+                SwitcherImage(count);
+            }
+            else
+            {
+                count = 0;
+            }          
+        }
+
+        public void SwitcherImage(int count)
+        {
+            if (count==0)
+            {
+                pictureBox1.Image = WindowsFormsApp1.Properties.Resources.Chisato_Nishikigi;
+            }
+            else if (count == 1)
+            {
+                pictureBox1.Image = WindowsFormsApp1.Properties.Resources.cc_lelouch_lamperouge_4k_manga_code_geass;
+            }
+            else if (count == 2)
+            {
+                pictureBox1.Image = WindowsFormsApp1.Properties.Resources.MariiinWallpaper;
+            }
+            else if (count == 3)
+            {
+                pictureBox1.Image = WindowsFormsApp1.Properties.Resources.PortraitSeraphine;
+            }
+        }
+    }
+}
